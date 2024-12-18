@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Result</title>
+</head>
+<body>
+    <h1>Calculator Result</h1>
+    <div>
+        <!-- Display error if present -->
+        <div th:if="${error}">
+            <p style="color: red;"><strong>Error:</strong> <span th:text="${error}"></span></p>
+        </div>
+
+        <!-- Display result if no error -->
+        <div th:unless="${error}">
+            <p><strong>Number 1:</strong> <span th:text="${num1}"></span></p>
+            <p><strong>Number 2:</strong> <span th:text="${num2}"></span></p>
+            <p><strong>Operation:</strong> <span th:text="${operation}"></span></p>
+            <p><strong>Result:</strong> <span th:text="${result}"></span></p>
+        </div>
+
+        <form action="/" method="get">
+            <button type="submit">Go Back</button>
+        </form>
+    </div>
+</body>
+</html>
